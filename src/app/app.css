@@ -1,2 +1,81 @@
 @import "tailwindcss";
 
+body {
+  background: #111;
+
+  --lines: #00ff00;
+}
+
+.stripes {
+  width: 100%;
+  height: 1px;
+  background-size: 200% 100%; 
+  animation: move 4s linear infinite;
+  position: absolute;
+  z-index: 2;
+}
+
+@keyframes move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.inputWrap {
+  position: absolute;
+  z-index: 3;
+}
+
+.inputWrap .question {
+  display: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  z-index: 4;
+  min-width: 100px;
+}
+
+.inputWrap.bottom .question {
+  top: auto;
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.inputWrap:hover .question {
+  display: block;
+  background-color: #111;
+  color: white;
+}
+
+.inputWrap input {
+  transition: all .2s linear;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--lines);
+  min-width: 20px;
+  color: #fff;
+}
+
+.inputWrap input.errored {
+  box-shadow: 0 0 26px #ff0000, 0 0 118px #ff0000;
+}
+
+.sendBtn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.status{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  z-index: 5;
+}
