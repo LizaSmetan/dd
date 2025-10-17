@@ -31,7 +31,7 @@ export default function Home() {
       }
     });
     if(isOk){
-      setStatus('5 3 2 6');
+      setStatus('9 3 7');
     } else {
       setStatus(false);
     }
