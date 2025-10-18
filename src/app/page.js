@@ -31,7 +31,7 @@ export default function Home() {
       }
     });
     if(isOk){
-      setStatus('9 3 7');
+      setStatus(process.env.NEXT_PUBLIC_ANSWER);
     } else {
       setStatus(false);
     }
